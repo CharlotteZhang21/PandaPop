@@ -1,0 +1,51 @@
+{
+  "name": "Vungle-Panda-Pop-170214-PIEC",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm run view && npm run import:all && budo src/main.js:bundle.js -p 8080 --live --open -- -d -e src/main.js -t [babelify --comments false --presets es2015]",
+    "prebuild": "mkdirp build",
+    "build": "npm run build:js && npm run build:html && npm run copy:all && npm run build:env",
+    "build:js": "browserify -d -e src/main.js -t [babelify --comments false --presets es2015] | uglifyjs -cm > build/bundle.min.js",
+    "build:html": "htmlprocessor index.html -o build/index.html",
+    "build:env": "sed -i.original 's:assets/::g' build/index.html && sed -i.original 's:../assets/::g' build/main.css",
+    "copy:all": "npm run copy:assets && npm run copy:phaser && npm run copy:settings && npm run copy:fonts && npm run copy:css",
+    "copy:assets": "imagemin --plugin=pngquant assets/* --out-dir=build",
+    "copy:fonts": "cp -v *.{eot,svg,ttf,woff} build/",
+    "copy:phaser": "cp -rf src/ext/phaser.min.js build/phaser.min.js",
+    "copy:settings": "cp -rf settings.js build/settings.js",
+    "copy:css": "cp css/main.css build/main.css",
+    "minify:phaser": "uglifyjs src/ext/phaser.js -cm -o src/ext/phaser.min.js",
+    "publish": "npm run build && node build-scripts/publish.js",
+    "sass": "node-sass -o css/ -w scss/",
+    "localise": "node build-scripts/localisation.js",
+    "view": "cp build-scripts/settings-overide.js src/settings-overide.js && node build-scripts/view.js",
+    "import:all": "npm run import:atlas && npm run import:levels",
+    "import:atlas": "node build-scripts/import-json.js './atlas/*.json' 'src/atlas/'",
+    "import:levels": "node build-scripts/import-json.js './levels/*.json' 'src/levels/'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "phaser": "^2.6.2"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "budo": "^8.3.0",
+    "clean-css": "^3.4.17",
+    "glob": "^7.1.1",
+    "htmlprocessor": "^0.2.3",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "kebab-case": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.3.0",
+    "replace-in-file": "^2.3.0",
+    "uglify-js": "^2.6.2"
+  }
+}

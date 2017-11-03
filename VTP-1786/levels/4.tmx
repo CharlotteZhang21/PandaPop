@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="hexagonal" renderorder="right-down" width="12" height="12" tilewidth="128" tileheight="221" hexsidelength="0" staggeraxis="y" staggerindex="odd" nextobjectid="1">
+ <tileset firstgid="1" name="bubbles" tilewidth="128" tileheight="128" tilecount="6" columns="6">
+  <image source="../spritesheets/bubbles/bubbles.png" width="768" height="128"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="12" height="12">
+  <data encoding="csv">
+2,2,5,5,5,5,5,5,5,5,4,4,
+2,2,6,6,6,6,6,6,6,6,4,4,
+2,2,1,0,1,0,1,0,1,0,1,4,
+2,2,0,1,1,0,0,1,1,0,4,0,
+2,2,3,3,3,3,3,3,3,3,4,4,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>

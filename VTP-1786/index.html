@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="{{lang_code}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <title>Vungle Endcard</title>
+    <!-- build:css main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- /build -->
+    <style>
+    @font-face {
+        font-family: "vungle-fonticon";
+        src: url("vungle-fonticon.eot");
+        src: url("vungle-fonticon.eot?#iefix") format("embedded-opentype"), url("vungle-fonticon.woff") format("woff"), url("vungle-fonticon.ttf") format("truetype"), url("vungle-fonticon.svg#vungle-fonticon") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'banzai';
+        src: url('banzai-bros.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="vungle-header" class="portrait-light landscape-light">
+        <a id="vungle-close" class="show" data-icon="i" onclick="doSomething('close')"></a>
+    </div>
+    <div id="vungle-footer" class="portrait-light landscape-light portrait-right landscape-right"><span class="footer" data-icon="q"></span></div>
+    <!-- IEC Creative starts here v2.0 -->
+    <div id="bg"></div>
+    <div id="landscape-bg"></div>
+    <div id="landscape-cta">
+        <span>{{download}}</span>
+        <img class="dialog-button button-right" src="assets/cta.png" onclick="doSomething('download')" />
+    </div>
+    <div id="landscape-logo">
+        <img class="logo" src="assets/logo.png" />
+    </div>
+    <div id="iec">
+        <div id="top-bar">
+            <div id="energy-bar"></div>
+        </div>
+        <div id="dotted-line"></div>
+        <div id="game">
+        </div>
+        <div id="arrow"></div>
+        <div id="tutorial-text">
+            <div class="inner">
+                {{tap_where_you_want_to_throw}}
+            </div>
+        </div>
+        <div id="tutorial-arrow"></div>
+        <div id="bubble-cannon"></div>
+        <div id="win-dialog" class="mask">
+            <div class="dialog">
+                <img class="logo" src="assets/logo.png" />
+                <img class="rays" src="assets/rays.png" />
+                <img class="dialog-bg" src="assets/dialog-success.png" />
+                <span class="title">{{success}}</span>
+                <span class="info">
+                {{you_popped_all_the_bubbles}}
+            </span>
+                <div class="dialog-button button-left" onclick="restartLevel()">
+                    <span>{{try_again}}</span>
+                    <img src="assets/try-again.png" />
+                </div>
+                <div class="dialog-button button-right" onclick="doSomething('download')">
+                    <span>{{download}}</span>
+                    <img src="assets/cta.png" />
+                </div>
+            </div>
+        </div>
+        <div id="lose-dialog" class="mask">
+            <div class="dialog">
+                <img class="logo" src="assets/logo.png" />
+                <img class="rays" src="assets/rays.png" />
+                <img class="dialog-bg" src="assets/dialog-failed.png" />
+                <span class="title">{{failed}}</span>
+                <span class="info">
+                {{you_didnt_pop_all_the_bubbles}}
+            </span>
+                <div class="dialog-button button-left" onclick="restartLevel()">
+                    <span>{{try_again}}</span>
+                    <img src="assets/try-again.png" />
+                </div>
+                <div class="dialog-button button-right" onclick="doSomething('download')">
+                    <span>{{download}}</span>
+                    <img src="assets/cta.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom-container">
+        <div id="client-footer">
+            <div class="button-overlay">
+                <span>{{download}}</span>
+            </div>
+            <a id="ctaButton" class="client-cta" href="javascript:void(0)" onclick="doSomething('download')">
+                <img src="assets/cta.png">
+            </a>
+        </div>
+    </div>
+    <!-- IEC Creative ends here -->
+    <!-- phaser requires fonts to be preloaded before they can be used "in game" -->
+    <!-- note: you can add more fonts below -->
+    <div class="preload-font" style="font-family: banzai;">.</div>
+    <!-- phaser requires fonts to be preloaded before they can be used "in game" -->
+    <!-- note: you can add more fonts below -->
+    <!-- <div class="preload-font" style="font-family: mousememoirs;">.</div> -->
+    <!-- build:remove -->
+    <script src="http://localhost:35729/livereload.js"></script>
+    <!-- /build -->
+    <!-- build:js phaser.min.js -->
+    <script src="node_modules/phaser/build/phaser.js"></script>
+    <!-- /build -->
+    <!-- build:js settings.js -->
+    <script src="settings.js"></script>
+    <!-- /build -->
+    <!-- build:remove -->
+    <script src="src/settings-overide.js"></script>
+    <!-- /build -->
+    <!-- build:js bundle.min.js -->
+    <script src="bundle.js"></script>
+    <!-- /build -->
+    <script>
+    var iec = document.getElementById('iec');
+    var tutorialText = document.getElementById('tutorial-text');
+
+    // call out to vungle SDK
+    function doSomething(s) {
+        return actionClicked(s);
+    }
+
+    window.addEventListener("load", function(event) {
+        iec.className = 'show';
+    }, false);
+
+    var piec = piec || {};
+
+    function restartLevel() {
+
+        // force phaser game restart
+        piec.restartLevel();
+
+        document.body.className = '';
+    }
+
+    piec.onMoveStart = function() {
+
+    };
+
+    piec.onMoveEnd = function(stats) {
+
+        // destroy this many bubbles to get a full energy bar with three stars
+        var maxBubblesDestroyed = 40;
+
+        piec.setEnergyLevel(stats.totalBubblesDestroyed / maxBubblesDestroyed);
+    };
+
+    piec.onGameWin = function() {
+
+        setTimeout(function() {
+            document.body.className = 'win';
+        }, 4000); //after 4 seconds show win dialog
+    };
+
+    piec.onGameLose = function() {
+
+        setTimeout(function() {
+            document.body.className = 'lose';
+        }, 4000); //after 4 seconds show lose dialog
+    };
+
+    piec.onTutorialHide = function() {
+
+        fade(tutorialText);
+    }
+
+    function fade(element) {
+        var op = 1; // initial opacity
+        var timer = setInterval(function() {
+            if (op <= 0.1) {
+                clearInterval(timer);
+                element.style.display = 'none';
+            }
+            element.style.opacity = op;
+            element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            op -= op * 0.1;
+        }, 5);
+    }
+    </script>
+</body>
+
+</html>

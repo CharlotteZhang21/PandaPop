@@ -1,0 +1,40 @@
+{ "height":12,
+ "hexsidelength":0,
+ "layers":[
+        {
+         "data":[5, 5, 5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":12,
+         "name":"Tile Layer 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":8,
+         "x":0,
+         "y":0
+        }],
+ "nextobjectid":1,
+ "orientation":"hexagonal",
+ "renderorder":"right-down",
+ "staggeraxis":"y",
+ "staggerindex":"odd",
+ "tiledversion":"1.0.3",
+ "tileheight":230,
+ "tilesets":[
+        {
+         "columns":6,
+         "firstgid":1,
+         "image":"..\/spritesheets\/bubbles\/bubbles.png",
+         "imageheight":128,
+         "imagewidth":768,
+         "margin":0,
+         "name":"bubbles",
+         "spacing":0,
+         "tilecount":6,
+         "tileheight":128,
+         "tilewidth":128
+        }],
+ "tilewidth":135,
+ "type":"map",
+ "version":1,
+ "width":8
+}

@@ -1,0 +1,156 @@
+@media all and (orientation: landscape) {
+    #bg {
+        width: 75%;
+    }
+    #game {
+        left: 15%;
+        width: 40%;
+        border-left: 1px solid rgba(255, 255, 255, 0.4);
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    #bottom-container {
+        display: none;
+    }
+    #dotted-line {
+        top: 8%;
+        width: 38%;
+        left: 15%;
+    }
+    #tutorial-text {
+        left: 35%;
+        width: 40%;
+        .inner {
+            font-size: 3.2vmin;
+            top: 31%;
+            left: 38%;
+        }
+    }
+    #tutorial-arrow {
+        width: 5%;
+        left: 35%;
+    }
+    #bubble-cannon {
+        top: 82%;
+        left: 15%;
+        width: 40%;
+    }
+    #top-bar {
+        opacity: 0;
+    }
+    #energy-bar {
+        left: 35% !important;
+        width: 40% !important;
+    }
+    .mask .dialog {
+        top: 62%;
+        width: 42%;
+        .title {
+            font-size: 7vmin !important;
+        }
+        .info {
+            font-size: 5vmin !important;
+            top: 25% !important;
+            text-stroke-width: 0.3vmin !important;
+        }
+        .dialog-button span {
+            font-size: 3.5vmin;
+        }
+    }
+    #landscape-cta {
+        display: block;
+        position: absolute;
+        top: 68%;
+        left: 83.5%;
+        width: 25%;
+        -webkit-transform: translate(-50%, -50%);
+        opacity: 1;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        img {
+            width: 100%;
+        }
+        span {
+            width: 100%;
+            font-size: 5.1vmin;
+            font-family: banzai;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            text-align: center;
+            -webkit-transform: translateY(-50%);
+            -webkit-text-stroke-width: 0.3vmin;
+            -webkit-text-stroke-color: black;
+        }
+    }
+    body.win #landscape-cta,
+    body.lose #landscape-cta {
+        opacity: 0;
+    }
+    #landscape-logo {
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 83.5%;
+        width: 25%;
+        -webkit-transform: translate(-50%, -50%);
+        opacity: 1;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        img {
+            width: 100%;
+        }
+    }
+    body.win #landscape-logo,
+    body.lose #landscape-logo {
+        opacity: 0;
+    }
+    #landscape-bg {
+        position: absolute;
+        top: 0;
+        left: percentage(2/3);
+        width: percentage(1/3);
+        height: 100%;
+        z-index: -10;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-width: 100% auto;
+        background-size: cover;
+        background-size: cover;
+        background-image: url(../assets/bg-landscape.png);
+        box-shadow: 2vmin 2vmin 4vmin 2vmin #151515;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5%;
+            height: 100%;
+            background-image: url(../assets/bamboo.png);
+            background-repeat: repeat-y;
+            background-width: 100% auto;
+            background-size: 100%;
+        }
+    }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+    .dialog {
+        top: 60% !important;
+    }
+    .mask .dialog span.info {
+        line-height: 7vmin;
+    }
+    #bottom-container #client-footer img {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+    .dialog {
+        width: 50% !important;
+    }
+    .mask .dialog span.info {
+        font-size: 4vmin !important;
+        line-height: 6vmin !important;
+    }
+}

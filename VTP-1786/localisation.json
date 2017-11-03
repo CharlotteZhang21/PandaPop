@@ -1,0 +1,42 @@
+{
+    "DE": [
+        { "lang_code": "de" },
+        { "success": "Super" },
+        { "failed": "Gescheitert" },
+        { "try_again": "Erneut versuchen" },
+        { "download": "Herunterladen" },
+        { "you_popped_all_the_bubbles": "Du hast alle Blasen geplatzt" },
+        { "you_didnt_pop_all_the_bubbles": "Du hast nicht alle Blasen geplatzt!" },
+        { "tap_where_you_want_to_throw": "Tippe an die Stelle, an die du werfen möchstest" }
+    ],
+    "JP": [
+        { "lang_code": "jp" },
+        { "success": "成功" },
+        { "failed": "失敗" },
+        { "try_again": "もう一度" },
+        { "download": "ダウンロード" },
+        { "you_popped_all_the_bubbles": "すべてのバブルを消しました" },
+        { "you_didnt_pop_all_the_bubbles": "バブルをすべて消せませんでした" },
+        { "tap_where_you_want_to_throw": "狙いたいところをタップ" }
+    ],
+    "FR": [
+        { "lang_code": "fr" },
+        { "success": "succès" },
+        { "failed": "raté" },
+        { "try_again": "essaye encore" },
+        { "download": "télécharger" },
+        { "you_popped_all_the_bubbles": "tu as éclaté toutes les bulles" },
+        { "you_didnt_pop_all_the_bubbles": "tu n’as pas éclaté toutes les bulles" },
+        { "tap_where_you_want_to_throw": "touche là où tu veux tirer" }
+    ],
+    "EN": [
+        { "lang_code": "en" },
+        { "success": "success" },
+        { "failed": "failed" },
+        { "try_again": "try again" },
+        { "download": "download" },
+        { "you_popped_all_the_bubbles": "you popped all the bubbles" },
+        { "you_didnt_pop_all_the_bubbles": "you didn't pop all the bubbles" },
+        { "tap_where_you_want_to_throw": "tap where you want to throw" }
+    ]
+}

@@ -1,0 +1,204 @@
+@import 'topbar';
+@import 'energy-bar';
+@import 'dialog';
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-width: 100% auto;
+    background-size: cover;
+    background-image: url(../assets/bg.jpg);
+}
+
+#game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#iec {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out 0.6s;
+    &.show {
+        opacity: 1;
+    }
+}
+
+#dotted-line {
+    position: absolute;
+    left: 0;
+    top: 7%;
+    width: 100%;
+    height: 1%;
+    background-image: url(../assets/dotted-line.png);
+    background-repeat: repeat-x;
+    opacity: 0.6;
+}
+
+#bubble-cannon {
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    pointer-events: none;
+    // background-color: red;
+}
+
+#bottom-container {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+#bottom-container #client-footer {
+    bottom: 0%;
+    height: 80%;
+    position: absolute;
+    text-align: center;
+    width: 55%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 900;
+    .button-overlay {
+        width: 100%;
+        height: 50%;
+        top: 25%;
+        z-index: 1000000;
+        position: absolute;
+        line-height: 50%;
+        span {
+            font-size: 8vw;
+            font-family: banzai;
+            font-weight: bold;
+            color: #fff;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -webkit-text-stroke-width: 0.3vw;
+            -webkit-text-stroke-color: black;
+        }
+    }
+}
+
+#bottom-container #client-footer img {
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: auto;
+}
+
+#bottom-container #client-footer {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+body.win #client-footer,
+body.lose #client-footer {
+    opacity: 0 !important;
+}
+
+#bottom-container.full {
+    opacity: 0;
+}
+
+
+/* phaser requires fonts to be preloaded before they can be used "in game" */
+
+.preload-font {
+    position: absolute;
+    bottom: -1000%;
+}
+
+#tutorial-text {
+    position: absolute;
+    top: 35%;
+    left: 49%;
+    height: 22%;
+    width: 90%;
+    -webkit-transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    .inner {
+        position: absolute;
+        width: 57%;
+        top: 35%;
+        left: 41%;
+        height: 42%;
+        font-size: 5vw;
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: bold;
+        font-family: arial;
+        color: #783818;
+    }
+}
+
+#tutorial-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 12%;
+    width: 15%;
+    -webkit-transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#landscape-cta {
+    display: none;
+}
+
+#landscape-logo {
+    display: none;
+}
+
+
+
+body.en {
+    #cta {
+        font-size: 4vw;
+    }
+}
+
+
+body.jp {
+    #cta {
+        font-size: 8vw;
+    }
+}

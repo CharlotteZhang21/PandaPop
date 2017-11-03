@@ -1,0 +1,109 @@
+@media all and (orientation: portrait) {
+    .jp {
+        .dialog .info {
+            font-size: 7vw !important;
+            -webkit-text-stroke-width: 0.3vmin !important;
+        }
+        .mask .dialog .dialog-button span {
+            font-weight: bold !important;
+            -webkit-text-stroke-width: 0vmin !important;
+        }
+        #bottom-container #client-footer .button-overlay span {
+            -webkit-text-stroke-width: 0vmin !important;
+        }
+    }
+    .en {}
+    .fr {
+        .dialog .info {
+            font-size: 5.2vw !important;
+        }
+        .mask .dialog .dialog-button span {
+            font-size: 5vw !important;
+        }
+        #bottom-container #client-footer .button-overlay span {
+            font-size: 6vw !important;
+        }
+    }
+    .de {
+        #tutorial-text .inner {
+            top: 30% !important;
+            font-size: 4.5vw !important;
+        }
+        .dialog .info {
+            font-size: 5vw !important;
+        }
+        #bottom-container #client-footer .button-overlay span {
+            font-size: 6vw !important;
+        }
+        .mask .dialog .dialog-button span {
+            font-size: 4.2vw !important;
+        }
+    }
+    @media (min-width: 768px) and (orientation: portrait) {
+        .jp {
+            #bottom-container #client-footer .button-overlay span {
+                font-size: 6vmin !important;
+            }
+        }
+        .en {}
+        .fr {
+            #bottom-container #client-footer .button-overlay span {
+                font-size: 5vmin !important;
+            }
+        }
+        .de {
+            #bottom-container #client-footer .button-overlay span {
+                font-size: 4vmin !important;
+            }
+        }
+    }
+    @media (min-width: 1024px) and (orientation: portrait) {
+        .jp {}
+        .en {}
+        .fr {
+            #bottom-container #client-footer .button-overlay span {
+                font-size: 4vmin !important;
+            }
+        }
+        .de {
+            #bottom-container #client-footer .button-overlay span {
+                font-size: 3vmin !important;
+            }
+        }
+    }
+}
+
+@media all and (orientation: landscape) {
+    .jp {
+        .mask .dialog .dialog-button span {
+            -webkit-text-stroke-width: 0vmin !important;
+        }
+        #landscape-cta span {
+            -webkit-text-stroke-width: 0vmin !important;
+        }
+    }
+    .en {}
+    .fr {
+        #landscape-cta span {
+            font-size: 4vmin !important;
+        }
+    }
+    .de {
+        @media (min-width: 1024px) {
+            #landscape-cta span {
+                font-size: 3.5vmin !important;
+            }
+            .mask .dialog .dialog-button span {
+                font-size: 3vmin !important;
+                margin-top: -3vmin;
+            }
+            #tutorial-text .inner {
+                top: 30% !important;
+                font-size: 3vmin !important;
+            }
+            .mask .dialog .dialog-button span {
+                top: 80%;
+            }
+        }
+    }
+}
